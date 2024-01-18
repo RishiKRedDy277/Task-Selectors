@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selectors Example</title>
+</head>
+<body>
+    <h1 id="title">Welcome</h1>
+    <p class="intro">This is an introduction.</p>
+    <p class="intro">Another introduction.</p>
+    <ul>
+        <li>Apple</li>
+        <li>Orange</li>
+        <li>Banana</li>
+    </ul>
+    <div id="content">
+        <p>Some content here.</p>
+        <p>More content.</p>
+    </div>
+</body>
+</html>
+<script>
+  // Selecting by ID
+let titleElement = document.getElementById('title');
+
+// Selecting by class name (returns a collection of elements)
+let introElements = document.getElementsByClassName('intro');
+
+// Selecting by tag name (returns a collection of elements)
+let listItems = document.getElementsByTagName('li');
+
+// Selecting by CSS selector (selects the first matching element)
+let contentElement = document.querySelector('#content'); // by ID
+let firstIntroElement = document.querySelector('.intro'); // by class
+
+// Selecting multiple elements using CSS selector (returns a collection)
+let allParagraphs = document.querySelectorAll('p');
+
+// Manipulating the selected elements (example)
+titleElement.textContent = 'Hello!'; // Change the text content of the title element
+// Looping through elements selected by class name
+for (let i = 0; i < introElements.length; i++) {
+    introElements[i].style.fontWeight = 'bold'; // Apply a style to each element
+}
+// Looping through the list items and changing their text content
+for (let i = 0; i < listItems.length; i++) {
+    // Changing the text content to uppercase
+    listItems[i].textContent = listItems[i].textContent.toUpperCase();
+}
+// Manipulating the selected elements
+contentElement.style.backgroundColor = 'lightblue'; // Change background color of content div
+
+firstIntroElement.style.fontStyle = 'italic'; // Make the first intro element italic
+
+// Loop through all paragraphs and add a class to them
+allParagraphs.forEach(paragraph => {
+    paragraph.classList.add('highlight');
+});
+
+</script>
